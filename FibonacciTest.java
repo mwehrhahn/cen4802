@@ -1,7 +1,11 @@
 package cen4802;
 
 public class FibonacciTest {
-
+	/** 
+ 	* Method that calculates and returns the nth term of the Fibonacci sequence using recursion
+   	* @param n, the position of the term to calculate, 1-based index
+     	* @return the nth fibonacci number
+	*/
 	public static int fibonacci(int n)
 	{
 		if (n <= 1)
