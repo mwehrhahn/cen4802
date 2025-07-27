@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci Calculator</title>
+    <script>
+        function calculateFibonacci(event) {
+            event.preventDefault();
+            const n = document.getElementById("number").value;
+            fetch("/fibonacci?n=" + n).then(response => response.text())
+                .then(result => {
+                    document.getElementById("output").innerText = "Result: " + result;
+                })
+                .catch(error => {
+                    document.getElementById("output").innerText = "Error: " + error;
+                })
+        }
+    </script>
+</head>
+<body>
+  <h1>Fibonacci Calculator</h1>
+  <form onsubmit="calculateFibonacci(event)">
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" name="n" required>
+    <button type="submit">Calculate</button>
+  </form>
+<p id="output"></p>
+</body>
+</html>

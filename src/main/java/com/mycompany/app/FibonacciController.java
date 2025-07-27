@@ -5,15 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
 public class FibonacciController {
 
     private static final Logger logger = LoggerFactory.getLogger(FibonacciController.class);
 
-    @GetMapping("/")
-    public String home() {
-        return "Welcome to Fibonacci Calculator!";
-    }
     @GetMapping("/fibonacci")
     public long getFibonacci(@RequestParam(name="n") int n) {
         logger.info("Received request for Fibonacci of n = {}", n);
